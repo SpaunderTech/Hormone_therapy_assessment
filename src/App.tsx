@@ -239,7 +239,9 @@ function App() {
             </div>
 
             <div className="flex flex-col gap-3 mb-4">
-              <button className="flex items-center gap-2 bg-[#337D80] hover:bg-[#286264] text-white px-4 py-2.5 rounded-xl text-base font-medium transition-colors w-full justify-center shadow-md hover:shadow-lg">
+              <button 
+              onClick={() => window.location.href = 'https://oemedz.com/hormone-replacement-therapy/#journey'}
+              className="flex items-center gap-2 bg-[#337D80] hover:bg-[#286264] text-white px-4 py-2.5 rounded-xl text-base font-medium transition-colors w-full justify-center shadow-md hover:shadow-lg">
                 <CalendarClock className={`w-4 h-4 ${iconBaseClass}`} />
                 Schedule Your Consultation Today
               </button>

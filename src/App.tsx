@@ -98,15 +98,15 @@ function App() {
   const isComplete = currentStep === questions.length;
 
   const handleRedirect = () => {
-    window.parent.postMessage(
-      {
-        type: "REDIRECT",
-        buttonId: "auto-click-target"
-      },
-      "*" 
-    );
-    console.log("Redirecting to new page...");
+    const message = {
+      type: "REDIRECT",
+      buttonId: "auto-click-target"
+    };
+  
+    window.parent.postMessage(message, "*");
+    console.log("Sent postMessage to parent window:", message);
   };
+  
 
   const handleNext = () => {
     if (selectedOption !== null) {

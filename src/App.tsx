@@ -97,6 +97,19 @@ function App() {
   const isLastStep = currentStep === questions.length - 1;
   const isComplete = currentStep === questions.length;
 
+  const handleRedirect = () => {
+    window.parent.postMessage(
+      {
+        type: "REDIRECT",
+        payload: {
+          url: "/new-page", // Relative or absolute URL on the WordPress site
+        },
+      },
+      "*" // Replace with exact origin if security is needed
+    );
+    console.log("Redirecting to new page...");
+  };
+
   const handleNext = () => {
     if (selectedOption !== null) {
       const score = getOptionScore(currentStep, selectedOption);
@@ -195,6 +208,8 @@ function App() {
     const level = getAssessmentLevel(score);
     const description = getAssessmentDescription(level);
     const levelIcon = getLevelIcon(level);
+
+    
     
     return (
       <div className="h-[780px] flex items-center justify-center bg-gray-50">
@@ -240,7 +255,7 @@ function App() {
 
             <div className="flex flex-col gap-3 mb-4">
               <button 
-              onClick={() => window.location.href = 'https://oemedz.com/hormone-replacement-therapy/#journey'}
+              onClick={handleRedirect}
               className="flex items-center gap-2 bg-[#337D80] hover:bg-[#286264] text-white px-4 py-2.5 rounded-xl text-base font-medium transition-colors w-full justify-center shadow-md hover:shadow-lg">
                 <CalendarClock className={`w-4 h-4 ${iconBaseClass}`} />
                 Schedule Your Consultation Today

@@ -101,11 +101,9 @@ function App() {
     window.parent.postMessage(
       {
         type: "REDIRECT",
-        payload: {
-          url: "/new-page", // Relative or absolute URL on the WordPress site
-        },
+        buttonId: "auto-click-target"
       },
-      "*" // Replace with exact origin if security is needed
+      "*" 
     );
     console.log("Redirecting to new page...");
   };

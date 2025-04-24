@@ -98,13 +98,7 @@ function App() {
   const isComplete = currentStep === questions.length;
 
   const handleRedirect = () => {
-    const message = {
-      type: "REDIRECT",
-      buttonId: "auto-click-target"
-    };
-  
-    window.parent.postMessage(message, "*");
-    console.log("Sent postMessage to parent window:", message);
+    window.location.replace("https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3yqlSg9ezz6olHF7ay-7nPSStKA59M3KECteGWammKAhDjU-bWiugTt-bkTDKbFjXI9NCj8nEA");
   };
   
 
